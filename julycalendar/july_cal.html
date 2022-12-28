@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>july calendar!!</title>
+
+    <style>
+
+       
+
+        div{display:inline-block;
+           
+        }
+        
+        /*뷰포트의 가로크기가 커져도 달력이 분리되지 않도록 각 줄마다 width를 차지하게 해주고 차지할 최소 공간을 설정해줍니다*/
+        div div{
+            min-width: 770px; /*뷰포트가 가로로 짧아져도 날짜가 내려가지 않도록!*/
+            display: block; /*뷰포트가 가로로 길어져도 옆에 가서 붙지 않도록!*/
+            background-color: white;
+        }
+
+        span{
+            display: inline-block;      
+            width:100px;
+            height:60px;
+            padding:5px 5px 0px;
+        }
+      
+        /*요일 클래스 번갈아가며 색 넣기*/
+        #dayofweek{
+            line-height: 60px;
+            text-align: center;
+        }
+        #dayofweek>span:nth-child(odd){
+            background-color: lavenderblush !important;
+        }
+        #dayofweek>span:nth-child(even){
+            background-color: aliceblue !important;
+        }
+
+        /*posco 배경색 바꾸기와 가상요소선택자 이용해서 posco 이어쓰기*/
+        #posco{
+            background-color:mediumblue !important;
+            color:aliceblue
+        }
+        #posco::after{
+            content: " posco";
+        }
+        /*6월달 부분 배경색 없애기-배경색 하얀색으로 처리하기*/
+        #firstweek>span:not(:nth-child(n+5)){
+            background-color: white !important;
+        }
+
+        
+        /*주별로 번갈아가며 전체 배경색 지정*/
+       div>div:nth-child(odd){
+        background-color: rgba(207, 199, 255, 0.523);
+       }
+
+       div>div:nth-child(even){
+        background-color: rgba(208, 185, 255, 0.509);
+       }
+
+     
+       /*월수금*/
+
+       div>div:not(first-child)>span:nth-child(2n+1){
+        background-color: rgb(176, 255, 188);
+       }
+
+       /*일요일*/
+       .sun{
+        background-color: rgba(255, 148, 148, 0.584) !important;
+       }
+       /*일요일 번갈아가며 색지정*/
+       div>div:nth-child(odd) .sun{
+        background-color: rgba(255, 140, 91, 0.429) !important;
+       }
+
+        
+    </style>
+</head>
+<body>
+    <div>
+        <div id="dayofweek">
+            <span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span><span class="sun">일</span>
+        </div>
+
+        <!--nbsp없이 공백없애는 방법이 있을까?!-->
+        <div id="firstweek">
+            <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span id="posco">1</span><span>2</span><span class="sun">3</span>
+        </div>
+
+        <div id="secondweek">
+            <span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span class="sun">10</span>
+        </div>
+
+        <div id="thirdweek">
+            <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span class="sun">17</span>
+        </div>
+
+        <div id="forthweek">
+            <span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span class="sun">24</span>
+        </div>
+
+        <div id="fifthweek">
+            <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span class="sun">31</span>
+        </div>
+    </div>
+
+    
+
+    
+</body>
+</html>

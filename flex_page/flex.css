@@ -1,0 +1,121 @@
+/*과제조건 안보고 만든 코드*/
+/*버리기 아까우니 올리기ㅠ*/
+
+@font-face {
+    font-family: 'HS-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    font-family: 'Hs-Regular',sans-serif;
+}
+.bar{
+    width:100px;
+    height:10000px;
+    position:absolute;
+    background:linear-gradient(orange,green,black);
+
+}
+
+
+
+/*컨테이너 공통속성*/
+body>div:not(.bar){
+    width:calc(100vw - 16px); /*100이 아니라 98을 준 이유는 스크롤바때문에 하단 아이템이 일부 잘려보였기 때문!*/
+    /*뷰포트말고 %로 주니까 스크롤 제외하고 예쁘게 만들어지는군!!*/
+    height:80px;
+
+    text-align: center;
+    line-height: 45px;
+    font-size: 1.3rem;
+
+    position:fixed;
+    left:0px; /*left 0을 주지 않으면 왼쪽여백이 생겨서*/
+    right:10px;
+
+    /*flex 속성*/
+    display:flex; 
+    align-items:center;
+    flex-wrap:nowrap;/*default값*/
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+
+/*컨테이너 공통속성의 width부분 때문에 x축 스크롤이 생겨서 x축 스크롤 숨기기*/
+body{
+    overflow-x: hidden;
+}
+/*컨테이너 개별속성*/
+.container_1{
+    background-color:aquamarine;
+    top:0px;
+}
+
+.container_2{
+    
+    background-color:coral;
+    bottom:0px;
+   
+}
+
+
+/*item공통속성*/
+div>div{
+    border-radius: 50px;
+    width:150px;
+    
+    height: 45px;
+    background-color: rgb(78, 70, 70);
+    
+}
+
+
+/*하단 메뉴바 비율맞추기(1 1 1 2)*/
+/*flex-basis와 같이 봐야 함!*/
+.container_2>.item2:not(:nth-child(4)){
+    flex-grow: 1;
+}
+
+.container_2>.item2:nth-child(4){
+    flex-grow: 2;
+}
+/*개별 item 속성*/
+.item1{
+    background-color: black;
+    color:aquamarine;
+}
+
+.item2{
+    flex-basis:0;
+    background-color: rgb(106, 101, 101);
+    color:darkorange;
+}
+
+/*hover*/
+.item1:hover{
+    background-color: coral;
+    cursor:pointer;
+}
+
+.item2:hover{
+    background-color: royalblue;
+    cursor:pointer;
+}
+
+/*background image*/
+.image{
+    display: block;/*span-> block 속성으로*/
+    background-image: url('https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2');
+    width:100vw;
+    height:10000px;/*스크롤 길이와 같은 높이*/
+                    /*100vh로 주면 중간에 잘림!*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:right 10px top 50px;
+    background-size: contain;
+   
+    
+
+}
+

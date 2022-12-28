@@ -1,0 +1,251 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
+/*common*/
+body { 
+    font-size: 16px;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    height: 3000px;
+    }
+a{
+    text-decoration: none;
+}
+.inner{
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    max-width:1232px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+  }
+
+/*header*/
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(to right,white,rgb(228, 215, 250),rgb(255, 255, 255)); 
+}
+
+/*inner*/
+
+header>.inner{
+    height: 72px;
+    transition: .3s;
+    box-sizing: border-box;
+}
+
+header>.inner:hover{
+    background-color: white;
+ }
+
+ /*logo*/
+.inner .header__logo{
+    margin-left: 10px;
+}
+
+
+.inner .header__logo a img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: block;
+    width: 105px;
+    height: 32px;    
+    margin: auto;
+   
+}
+
+/*menubar*/
+
+.inner .header__menubar{
+    display: flex;
+    color: #222529;
+    left: 100px;
+    
+    height: 40px;
+    position: absolute;
+    margin: auto 40px;
+    top: 0;
+    bottom: 0;
+}
+
+
+/* .inner .header__menubar>li{==.item
+
+}
+header .inner .header__menubar>.item>.item__name{} */
+
+.inner .header__menubar>.item>.item__name>a{
+    display: block;
+    margin-right: 30px;
+    border-radius: 6px;
+    line-height: 40px;
+    padding: 0 10px;
+    width: auto;
+    height: 40px;
+    color: #222529;
+
+}
+.inner .header__menubar>.item>.item__name>a:hover{
+    background-color: #f5f5f5;
+
+}
+
+.inner .header__menubar>.item>.item__name>a>i{
+    transition: .5s;
+}
+.inner .header__menubar>.item>.item__name>a:hover i{
+   transform: rotate(180deg);
+}
+
+
+
+/*hover 시 드롭다운 메뉴 내려오게*/
+/*오늘 과제 여기서부터 주로 작성....*/
+header>.inner>.header__menubar>.item>.item__content{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    /* header 높이만큼 떼어주기 */
+   
+    display: none;
+    box-shadow: 10px 5px 5px rgb(173, 173, 173);
+   
+}
+
+header>.inner>.header__menubar>.item:hover>.item__content{
+    position: fixed;
+    display: block;
+}
+
+/* header>.inner>.header__menubar>.item>.item__content>.inner{
+     display: flex;
+} */
+
+/*까악*/
+header>.inner>.header__menubar>.item>.item__content>.inner>li{
+    /* .item__content__title :flex요소 하나의 전체 제목*/
+    background-color: white;
+    margin: 0 10px ;
+    font-size: 15px;
+    padding-top: 50px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    
+}
+
+/* header>.inner>.header__menubar>.item>.item__content>.inner>li>ul{
+}
+
+header>.inner>.header__menubar>.item>.item__content>.inner>li>ul>li{
+} */
+
+header >.inner>.header__menubar>.item>.item__content>.inner>li>ul>li>a{
+    display: block;
+    /* 전체 width: 1232px임을 참고하기 */
+    width: 350px;
+
+    /*세로요소간격+ 가로요소끼리의 간격*/
+    margin: 15px 0;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+}
+
+header >.inner>.header__menubar>.item>.item__content>.inner>li>ul>li>a:hover{
+    background-color: rgba(231, 231, 231, 0.395);
+}
+
+header>.inner>.header__menubar>.item>.item__content>.inner a>img{
+    width: 45px;
+    float: left;
+    position: absolute;
+    top: 0;
+    padding-top: 10px;
+}
+header>.inner>.header__menubar>.item>.item__content>.inner a>div{
+    font-size: 15px;
+    line-height: 1.5;
+    
+   /*사진오른쪽 끝과 글의 시작점을(>?) 맞추기 위해서*/
+    margin-left: 55px;
+}
+
+ header>.inner>.header__menubar>.item>.item__content>.inner a>div>span{
+    font-size: 16px;
+    color: #525558;
+    /*화살표 자기기준으로 위치 살짝 조정*/
+    position: relative;
+    top: 3px;
+    display: none;
+
+} 
+header >.inner>.header__menubar>.item>.item__content>.inner>li>ul>li>a:hover>div>span{
+    /* a 박스 hover시 화살표 나타나도록 */
+    display: inline;
+}
+
+header>.inner>.header__menubar>.item>.item__content>.inner a>div:nth-child(2){
+    /* 박스안의 소제목 */
+    color: #000;
+}
+
+header>.inner>.header__menubar>.item>.item__content>.inner a>div:nth-child(3){
+    /* 박스안의 소제목에 대한 설먕 */
+    color: #8a8a8a;
+}
+
+
+/*button*/
+
+.inner .header__btn{
+    display: flex;    
+}
+
+.inner .header__btn .header__btn__login{
+    color: #4a5056;
+    right: 150px;
+    
+    position: absolute;
+    height: 16px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+
+.inner .header__btn .header__btn__login:hover{
+    text-decoration: underline;
+}
+
+.inner .header__btn .header__btn__question{
+    background-color: #353a3f;
+    color: white;
+    font-weight: 500;
+    height: 40px;
+    width: 85px;
+    border-radius: 5px;
+
+    padding: 8px 16px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 25px;
+
+    /*수직정렬& right 위치조절*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 50px;
+    margin: auto;
+    
+
+}
+.inner .header__btn .header__btn__question:hover{
+    background-color: gray;
+}

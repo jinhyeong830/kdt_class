@@ -1,0 +1,211 @@
+/*할 것: 백그라운드 사진
+동그라미 색깔 필터 안먹게 처리
+hover, active 시 꼭지점에만 aim? 생기는 것 처리하기
+
+*/
+
+.container{
+    display: flex;
+    max-width:800px;
+    flex-wrap:wrap;
+    justify-content: center;
+    padding:40px 20px;
+    background-color: silver;
+    margin:auto;
+}
+.container .wrap{
+    text-align: center;
+    font-size:13px;
+ }
+.container .blackbox{
+    width:84px;
+    height: 84px;
+    box-sizing: border-box;
+    background-color: #000;
+    margin:9px 22px;
+    position:relative;
+}
+.container .blackbox .gr_line{
+    position:relative;
+    top:2px;
+    left:2px;
+    width:80px;
+    height: 80px;
+    border:0.5px solid gray;
+    box-sizing: border-box;
+}
+
+.container .wrap .blackbox .gr_line .imag{
+    width:100%;
+    height:100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position:relative;
+}
+
+
+
+/*circle image 형제라면*/
+.circle{
+    box-sizing: border-box;    
+    width:86px;
+    height: 86px;
+    position:relative;
+    bottom:82.5px;
+    right: 3.5px;
+}
+
+/*hover*/
+
+.container .wrap .blackbox .gr_line:hover{
+    box-sizing: content-box;
+    border:1.5px solid transparent;
+    border-image: linear-gradient(to top, goldenrod, rgb(253, 255, 209));
+    border-image-slice: 1;
+    position:absolute;
+    top:0.5px;
+    left:0.5px;
+    
+
+}
+/*active*/
+/*active 시 hover 효과 없애줘야??*/
+.container .wrap .blackbox .gr_line:active{
+    border:1.5px none black;
+    box-sizing: content-box;
+    position:absolute;
+    top:1.5px;
+    left:2px;
+    filter: grayscale(90%);
+}
+
+
+
+
+    /* circle gold*/
+
+.circle:active{
+    z-index: 1;
+    border:2px solid white;
+    width:88px;
+    height: 88px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position:relative;
+    bottom:84px;
+    right: 4px;
+}
+
+
+
+
+
+
+
+/*
+이미지 클릭시 위에 덮어지는 원에 그라데이션 효과가 들어가 있어서 
+border에 그라데이션 넣는 효과를 찾아봤더니 제가 찾아본 모든 페이지에서
+border을 투명하게 설정해놓고 안에 그라데이션 배경을 주고 그 위를 컨텐트로 덮는 방법으로 하라고 되어있었습니다!
+
+그런데 투명한 원(??) 뒤의 원래 사진의 모서리까지 보이게 하고 싶으면 
+이미지 안에 원안에 이미지를 다시 넣는 방법밖을 생각해봤는데 
+그렇게 되면 뒤 배경이랑 불일치가 일어날 것 같아서욧..
+저의 접근 방법이 올바른걸까요??*/
+
+
+
+.container>.wrap:nth-child(1) .imag{
+    background-image: url(./champions/01.png);
+}
+.container>.wrap:nth-child(2) .imag{
+    background-image: url(./champions/02.png);
+}
+.container>.wrap:nth-child(3) .imag{
+    background-image: url(./champions/03.png);
+}
+.container>.wrap:nth-child(4) .imag{
+    background-image: url(./champions/04.png);
+}
+.container>.wrap:nth-child(5) .imag{
+    background-image: url(./champions/05.png);
+}
+.container>.wrap:nth-child(6) .imag{
+    background-image: url(./champions/06.png);
+}
+.container>.wrap:nth-child(7) .imag{
+    background-image: url(./champions/07.png);
+}
+.container>.wrap:nth-child(8) .imag{
+    background-image: url(./champions/08.png);
+}
+.container>.wrap:nth-child(9) .imag{
+    background-image: url(./champions/09.png);
+}
+.container>.wrap:nth-child(10) .imag{
+    background-image: url(./champions/10.png);
+}
+.container>.wrap:nth-child(11) .imag{
+    background-image: url(./champions/11.png);
+}
+.container>.wrap:nth-child(12) .imag{
+    background-image: url(./champions/12.png);
+}
+.container>.wrap:nth-child(13) .imag{
+    background-image: url(./champions/13.png);
+}
+.container>.wrap:nth-child(14) .imag{
+    background-image: url(./champions/14.png);
+}
+.container>.wrap:nth-child(15) .imag{
+    background-image: url(./champions/15.png);
+}
+.container>.wrap:nth-child(16) .imag{
+    background-image: url(./champions/16.png);
+}
+.container>.wrap:nth-child(17) .imag{
+    background-image: url(./champions/17.png);
+}
+.container>.wrap:nth-child(18) .imag{
+    background-image: url(./champions/18.png);
+}
+.container>.wrap:nth-child(19) .imag{
+    background-image: url(./champions/19.png);
+}
+.container>.wrap:nth-child(20) .imag{
+    background-image: url(./champions/20.png);
+}
+.container>.wrap:nth-child(21) .imag{
+    background-image: url(./champions/21.png);
+}
+.container>.wrap:nth-child(22) .imag{
+    background-image: url(./champions/22.png);
+}
+.container>.wrap:nth-child(23) .imag{
+    background-image: url(./champions/23.png);
+}
+.container>.wrap:nth-child(24) .imag{
+    background-image: url(./champions/24.png);
+}
+.container>.wrap:nth-child(25) .imag{
+    background-image: url(./champions/25.png);
+}
+.container>.wrap:nth-child(26) .imag{
+    background-image: url(./champions/26.png);
+}
+.container>.wrap:nth-child(27) .imag{
+    background-image: url(./champions/27.png);
+}
+.container>.wrap:nth-child(28) .imag{
+    background-image: url(./champions/28.png);
+}
+.container>.wrap:nth-child(29) .imag{
+    background-image: url(./champions/29.png);
+}
+.container>.wrap:nth-child(30) .imag{
+    background-image: url(./champions/30.png);
+}
+.container>.wrap:nth-child(30) .imag2{
+    background-image: url(./champions/30.png);
+}
+

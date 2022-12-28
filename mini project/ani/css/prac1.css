@@ -1,0 +1,33 @@
+.circle {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 0%;
+	top: 0;
+	border-radius: 50%;
+	background-color: red;
+	animation: ball 5s linear infinite;
+}
+
+@keyframes ball {
+	0% {
+		left: 0;
+		top: 0;
+	}
+	25% {
+		left: calc(100vw - 100px);
+		top: 0;
+	}
+	50% {
+		left: calc(100vw - 100px);
+		top: calc(100vh - 100px);
+	}
+	75% {
+		left: 0;
+		top: calc(100vh - 100px);
+	}
+	100% {
+		left: 0;
+		top: 0;
+	}
+}

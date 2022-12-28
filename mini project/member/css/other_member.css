@@ -1,0 +1,23 @@
+.member_2 {
+	background-color: rgba(255, 255, 0, 0.461);
+}
+
+.member_2 .wrap .profile img {
+	box-shadow: 5px 15px 20px rgba(255, 255, 0, 0.315);
+}
+.member_2 .wrap .profile .btnView {
+	background: linear-gradient(45deg, gold, rgba(255, 217, 0, 0.463));
+	box-shadow: 5px 10px 20px rgba(255, 255, 0, 0.525);
+}
+
+.member_3 {
+	background-color: rgba(85, 211, 85, 0.447);
+}
+
+.member_3 .wrap .profile img {
+	box-shadow: 5px 15px 30px rgba(0, 128, 0, 0.329);
+}
+.member_3 .wrap .profile .btnView {
+	background: linear-gradient(45deg, yellowgreen, rgba(41, 255, 101, 0.562));
+	box-shadow: 5px 10px 20px rgba(0, 128, 0, 0.329);
+}

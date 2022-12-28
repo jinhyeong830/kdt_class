@@ -1,0 +1,111 @@
+@import "reset";
+@import "mixin";
+
+/* COMMON */
+/* COLOR SET*/
+//wrap
+$bodyBgColor: #eee;
+$itemBgColor: #000;
+$itemHoverBgColor: hotpink;
+//
+$boxShadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+
+//animation
+$interval: 0.3s;
+body {
+	background-color: $bodyBgColor;
+	.wrap {
+		width: 100%;
+		border-bottom: 2px solid blueviolet;
+		/* 높이는  */
+		/* height: 100vh;  */
+		padding: 100px;
+		display: flex;
+		justify-content: center;
+		perspective: 600px;
+		&:hover {
+			.item {
+				transform: translate(0, 0px) rotateY(0deg);
+				opacity: 1;
+			}
+		}
+
+		.item {
+			width: 300px;
+			padding: 30px;
+			background-color: $itemBgColor;
+			margin: 50px;
+			border-radius: 10px;
+			box-shadow: $boxShadow;
+
+			transition: 0.4s;
+			opacity: 0;
+			transform: translate(0, 100px) rotateY(180deg);
+
+			&::after {
+				content: "!";
+			}
+
+			h2 {
+				font: bold 30px/1 "arial";
+				margin-bottom: 20px;
+
+				@if $itemBgColor == #fff {
+					color: #444;
+				} @else {
+					color: #fff;
+				}
+			}
+
+			p {
+				font: normal 16px/1.5 "cursive";
+
+				@if $itemBgColor == #fff {
+					color: #777;
+				} @else {
+					color: #ccc;
+				}
+			}
+
+			a {
+				@include btn(150px, #222, red);
+			}
+
+			$bgColors: (orange, hotpink, aqua, lightgreen);
+
+			@each $el in $bgColors {
+				$index: index($bgColors, $el);
+				&:nth-of-type(#{$index}) {
+					transition-delay: $interval * $index;
+					a {
+						@include btn($bgColor: $el);
+					}
+					// p {
+					// 	color: $el;
+					// }
+					// h2 {
+					// 	color: $el;
+					// }
+				}
+			}
+
+			// @for $index from 1 to 5 {
+			// 	&:nth-of-type(#{$index}) {
+			// 		transition-delay: $interval * $index;
+			// 	}
+			// }
+			// &:nth-of-type(1) {
+			// 	transition-delay: 0.1s;
+			// }
+			// &:nth-of-type(2) {
+			// 	transition-delay: 0.2s;
+			// }
+			// &:nth-of-type(3) {
+			// 	transition-delay: 0.3s;
+			// }
+			// &:nth-of-type(4) {
+			// 	transition-delay: 0.4s;
+			// } 랑 for문이랑 같은 것
+		}
+	}
+}

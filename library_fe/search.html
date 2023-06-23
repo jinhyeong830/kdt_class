@@ -1,0 +1,30 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/837ff3adc1.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/search.css" />
+  </head>
+  <body>
+    <div class="search"><input type="text" /> <i class="fa-solid fa-magnifying-glass"></i></div>
+    <script>
+      console.log(window.localStorage);
+
+      const input = document.querySelector('input');
+
+      const glass = document.querySelector('i');
+      glass.addEventListener('click', function () {});
+      input.addEventListener('keydown', function (e) {
+        if (e.keyCode === 13) {
+          console.log('enter');
+          console.log(input.value);
+        }
+      });
+    </script>
+  </body>
+</html>

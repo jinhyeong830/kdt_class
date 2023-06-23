@@ -1,0 +1,114 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <style>
+      .swiper {
+        width: 100%;
+        background-color: antiquewhite;
+        height: 200px;
+      }
+
+      .swiper-slide {
+        width: 200px;
+        height: 100%;
+        /* background-color: red; */
+        border: 1px solid slateblue;
+        text-align: center;
+        /* float: ; */
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: black;
+      }
+
+      .swiper-pagination {
+        /* 위치조정등은 여기서 하면 됨,, */
+      }
+
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background: rgb(79, 75, 76);
+        border: 1px solid black;
+        opacity: 1;
+      }
+      .swiper-pagination-bullet-active {
+        width: 40px;
+        transition: width 0.5s;
+        border-radius: 5px;
+        background: pink;
+        border: 1px solid transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <!--swiper cdn얻어오는 swiper 블로그.
+        https://swiperjs.com/get-started#use-swiper-from-cdn
+
+        swiper 속성 잘 정리되어 있는 블로그
+        https://iridescent-zeal.tistory.com/150 -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">slide 1</div>
+        <div class="swiper-slide">slide 2</div>
+        <div class="swiper-slide">slide 3</div>
+        <div class="swiper-slide">slide 4</div>
+        <div class="swiper-slide">slide 5</div>
+        <div class="swiper-slide">slide 6</div>
+        <div class="swiper-slide">slide 7</div>
+        <div class="swiper-slide">slide 8</div>
+        <div class="swiper-slide">slide 9</div>
+      </div>
+
+      <!-- pagination ? 아래 선택창 동그라미 -->
+      <div class="swiper-pagination"></div>
+
+      <!-- 화살표 없어도 됨 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- 물론 스크롤도 없어도 됨 -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+
+    <script>
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        // direction: 'vertical',
+        // direction default horizontal
+        loop: true,
+        autoplay: true, //autoplay 없으면 수동으로 넘기는것, 있으면 자동으로 넘기기
+
+        slidesPerView: 3,
+        // mousewheel: true,
+        // If we need pagination
+        speed: 500, // 자동으로 움직이는 속도가 아닌 슬라이드에서 다른 슬라이드로 넘어가는 간격값 조정
+        // default값 300(3초), 100하면 너무 경거망동해보임..
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true, // pagination 동그라미 누르면 이동할 수 있도록 하는 옵션
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      });
+    </script>
+  </body>
+</html>

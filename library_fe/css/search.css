@@ -1,0 +1,27 @@
+/** @format */
+.search {
+  position: relative;
+  width: 500px;
+}
+.search input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  border: none;
+  background-color: rgba(151, 189, 93, 0.103);
+}
+.search input:focus {
+  outline-color: rgba(211, 241, 164, 0.8588235294);
+}
+.search i {
+  position: absolute;
+  font-size: 20px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: gray;
+}/*# sourceMappingURL=search.css.map */

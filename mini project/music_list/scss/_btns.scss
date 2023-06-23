@@ -1,0 +1,106 @@
+.btnPrev {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-20vw, -50%);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 0;
+	padding-left: 20px;
+	cursor: pointer;
+	color: #fff;
+
+	span {
+		font-size: 16px;
+		color: #fff;
+		transition: 0.5s;
+	}
+
+	&::after,
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: #fff;
+		position: absolute;
+		left: 0;
+		transform-origin: left center; //순서대로 xy축에 대한 기준점을 새로 잡아 주는 것
+		transform: rotate(-180deg);
+		transition: 0.5s;
+	}
+
+	&::after {
+		transform: rotate(180deg);
+	}
+
+	&:hover {
+		span {
+			transform: translate(10px, 0);
+			opacity: 0;
+		}
+		&::after {
+			transform: rotate(30deg);
+		}
+
+		&::before {
+			transform: rotate(-30deg);
+		}
+	}
+}
+.btnNext {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(calc(20vw - 60px), -50%);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 0;
+	padding-right: 20px;
+	cursor: pointer;
+	color: #fff;
+
+	span {
+		font-size: 16px;
+		color: #fff;
+		transition: 0.5s;
+	}
+
+	&::after,
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: #fff;
+		position: absolute;
+		left: 0;
+		transform-origin: right center; //순서대로 xy축에 대한 기준점을 새로 잡아 주는 것
+		transform: rotate(-180deg);
+		transition: 0.5s;
+	}
+
+	&::after {
+		transform: rotate(180deg);
+	}
+
+	&:hover {
+		span {
+			transform: translate(-10px, 0);
+			opacity: 0;
+		}
+		&::after {
+			transform: rotate(30deg);
+		}
+
+		&::before {
+			transform: rotate(-30deg);
+		}
+	}
+}
